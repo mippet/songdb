@@ -8,13 +8,14 @@
 Song.delete_all
 Artist.delete_all
 
-stevie_wonder = Artist.create(name: " Stevie Wonder")
-typhoon = Artist.create(name: " Typhoon")
-doe_maar = Artist.create(name: " Doe Maar")
+stevie_wonder = Artist.create(name: "Stevie Wonder")
+typhoon = Artist.create(name: "Typhoon")
+doe_maar = Artist.create(name: "Doe Maar")
 
-song1 = Song.create(name: "AS", artist: stevie_wonder)
-song2 = Song.create(name: "Superstition", artist: stevie_wonder)
-song3 = Song.create(name: "Zandloper", artist: typhoon)
-song4 = Song.create(name: "Niet weglopen", artist: typhoon)
-song5 = Song.create(name: "De bom", artist: doe_maar)
-song6 = Song.create(name: "Pa", artist: doe_maar)
+Song.create(name: "AS", artist: stevie_wonder)
+Song.create(name: "Superstition", artist: stevie_wonder)
+Song.create(name: "Zandloper", artist: typhoon)
+Song.create(name: "Niet weglopen", artist: typhoon)
+Song.create(name: "De bom", artist: doe_maar)
+Song.create(name: "Pa", artist: doe_maar)
+
