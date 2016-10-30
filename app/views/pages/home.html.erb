@@ -1,2 +1,9 @@
-<h1> Welcome to the Key of Life </h1>
-<h2> Song Database </h2>
+<h1>Welcome to the Key Of Life</h1>
+<h3> Still pretty blank SongDatabase </h3>
+
+<div>
+  <h1> Artists </h1>
+  <% @artists.each do |artist|%>
+<p>  <%= link_to artist.name, artist_path(artist.id)%></p>
+</div>
+  <%end%>
