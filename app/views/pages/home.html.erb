@@ -1,10 +1,21 @@
 <h1>Welcome to the Key Of Life</h1>
 <h3> Still pretty blank SongDatabase </h3>
 
-<div>
+
   <h1> Artists </h1>
-  <% @artists.each do |artist|%>
-<img src="<%= artist.image %>">
-<p>  <%= link_to artist.name, artist_path(artist.id)%></p>
-</div>
+  <p><a href="artists/new" class="btn btn-primary" role="create">New Artist</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+
+  <div class="row">
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <div class="caption">
+          <p><% @artists.each do |artist|%></p>
+              <img src="<%= artist.image %>" class="img-fluid">
+            <h3><%= link_to artist.name, artist_path(artist.id)%></h3>
+            <%= link_to "[Delete]", artist_path(artist.id), method: :delete, data: { confirm: "Are you sure?" } %>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <%end%>

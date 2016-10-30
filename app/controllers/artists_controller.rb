@@ -19,7 +19,7 @@ class ArtistsController < ApplicationController
       def update
         @artist = Artist.find(params[:id])
 
-        location_params = params.require( :artist ).permit( :name, :image )
+        location_params = params.require( :artist ).permit( :name, :image_url )
 
 
         if @artist.update_attributes( location_params )
@@ -31,28 +31,24 @@ class ArtistsController < ApplicationController
 
       def destroy
         @artist = Artist.find(params[:id])
-
         @artist.destroy
 
-        redirect_to locations_path
+        redirect_to home_path
       end
 
 
 
-
-      def new
-        @artist = Artist.new
+      def artist_params
+        params.require(:artist).permit(:name, :image)
       end
 
       def create
-        artist_params = params.require( :artist ).permit( :name, :image )
+      @artist = Artist.new(artist_params)
+      if @artist.save
+        redirect_to @artist
+      else
+        redirect_to home_path
+    end
+  end
 
-        @artist = Artist.new(artist_params)
-
-        if @artist.save
-          redirect_to @artist
-        else
-          render 'new'
-        end
-      end
 end

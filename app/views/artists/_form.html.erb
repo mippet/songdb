@@ -1,14 +1,13 @@
-<%= form_for @artist do |f| %>
+<%= form_for [@artist = Artist.new] do |f| %>
 
   <%= f.label :name %>
   <%= f.text_field :name %>
 
-  <%= f.label :name %>
-  <%= f.number_field :age %>
-
   <%= f.label :image_url %>
-  <%= f.text_field :image_url %>
+  <%= f.text_field :image %>
 
-  <%= f.submit (@artist.new_record? ? "Create" : "Update") %>
+  <div class="actions">
+        <%= f.submit "Add Artist", class: "btn btn-success" %>
+      </div>
 
 <% end %>

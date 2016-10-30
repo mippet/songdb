@@ -1,2 +1,14 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.img-fluid {
+  max-width:200px;
+  border-radius: 5px;
+  object-fit:cover;
+}
+
+
+.container {
+  padding: 0px;
+  width: 1000px !important;
+}
