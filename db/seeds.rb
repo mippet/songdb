@@ -8,9 +8,10 @@
 Song.delete_all
 Artist.delete_all
 
-stevie_wonder = Artist.create(name: "Stevie Wonder")
-typhoon = Artist.create(name: "Typhoon")
-doe_maar = Artist.create(name: "Doe Maar")
+stevie_wonder = Artist.create(name: "Stevie Wonder", image: "http://res.cloudinary.com/mippet/image/upload/v1477824290/Casalverde/songdb/stevie2.jpg")
+typhoon = Artist.create(name: "Typhoon", image: "http://res.cloudinary.com/mippet/image/upload/v1477824408/Casalverde/songdb/typhoon2.jpg")
+doe_maar = Artist.create(name: "Doe Maar", image: "http://res.cloudinary.com/mippet/image/upload/v1477824335/Casalverde/songdb/Doe-Maar.jpg")
+
 
 Song.create(name: "AS", artist: stevie_wonder)
 Song.create(name: "Superstition", artist: stevie_wonder)
@@ -18,4 +19,3 @@ Song.create(name: "Zandloper", artist: typhoon)
 Song.create(name: "Niet weglopen", artist: typhoon)
 Song.create(name: "De bom", artist: doe_maar)
 Song.create(name: "Pa", artist: doe_maar)
-

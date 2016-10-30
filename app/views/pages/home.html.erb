@@ -4,6 +4,7 @@
 <div>
   <h1> Artists </h1>
   <% @artists.each do |artist|%>
+<img src="<%= artist.image %>">
 <p>  <%= link_to artist.name, artist_path(artist.id)%></p>
 </div>
   <%end%>

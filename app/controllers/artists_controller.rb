@@ -19,7 +19,7 @@ class ArtistsController < ApplicationController
       def update
         @artist = Artist.find(params[:id])
 
-        location_params = params.require( :artist ).permit( :name )
+        location_params = params.require( :artist ).permit( :name, :image )
 
 
         if @artist.update_attributes( location_params )
@@ -45,7 +45,7 @@ class ArtistsController < ApplicationController
       end
 
       def create
-        artist_params = params.require( :artist ).permit( :name )
+        artist_params = params.require( :artist ).permit( :name, :image )
 
         @artist = Artist.new(artist_params)
 
